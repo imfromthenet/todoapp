@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoApp</title>
+</head>
+<body>
+
+<h1>My ToDos</h1>
+
+<h2>List of all ToDos</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Urgent</th>
+    </tr>
+    </thead>
+
+    <!--/*@thymesVar id="todos" type="at.apidesign.todoapp.domain.Todo"*/-->
+    <tr th:each="todo : ${todos}">
+        <!--        /*@thymesVar id="title" type="at.apidesign.todoapp.domain.Todo.title"*/-->
+        <td th:text="${todo.title}"></td>
+        <!--/*@thymesVar id="urgent" type="at.apidesign.todoapp.domain.Todo.urgent"*/-->
+        <td th:text="${todo.urgent}"></td>
+    </tr>
+</table>
+</body>
+</html>
